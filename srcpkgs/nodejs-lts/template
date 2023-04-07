@@ -1,7 +1,7 @@
 # Template file for 'nodejs-lts'
 pkgname=nodejs-lts
-version=12.22.10
-revision=3
+version=18.15.0
+revision=1
 # Need these for host v8 for torque, see https://github.com/nodejs/node/pull/21079
 hostmakedepends="pkg-config python libatomic-devel zlib-devel which
  $(vopt_if icu icu-devel) $(vopt_if ssl openssl-devel) $(vopt_if libuv libuv-devel)
@@ -17,7 +17,7 @@ maintainer="Enno Boland <gottox@voidlinux.org>"
 license="MIT"
 homepage="https://nodejs.org/"
 distfiles="${homepage}/dist/v${version}/node-v${version}.tar.gz"
-checksum=1eeec68b530da4aced730e2af9e07a1ced8148337708f37fc8b4eddc3b6dc9e9
+checksum=d65c4c3ef3c8815bccda9502081a29458c7c80797db0763f8752f270a824ac2b
 python_version=3
 
 build_options="ssl libuv http_parser icu nghttp2 cares"
@@ -39,7 +39,7 @@ fi
 
 case "$XBPS_TARGET_MACHINE" in
 	ppc64*) ;;
-	ppc*) broken="Node 12.x does not support 32-bit ppc" ;;
+	ppc*) broken="Node 18.x does not support 32-bit ppc" ;;
 esac
 
 CFLAGS="-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
